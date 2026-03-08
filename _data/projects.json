@@ -1,0 +1,12 @@
+[
+  {
+    "id": "eagle-security",
+    "title": "EAGLE Security",
+    "description_de": "IMSI-Catcher-Erkennung, Kamerasperre. Smart Anti-Abhör-App. Erkennt gefälschte Basisstationen, sperrt Kamera und Mikrofon, Schutz vor Abhören.",
+    "description_en": "IMSI-catcher catcher, camera lock. Smart anti-wiring application. Detects fake base stations, locks camera and microphone, helps protect against tapping.",
+    "link": "https://play.google.com/store/apps/details?id=com.integer.eaglesecurity_free",
+    "logo": "/assets/logos/eagle-security.webp",
+    "linkLabel_de": "Bei Google Play",
+    "linkLabel_en": "Get it on Google Play"
+  }
+]

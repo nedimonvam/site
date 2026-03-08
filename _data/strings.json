@@ -1,0 +1,20 @@
+{
+  "de": {
+    "nav_home": "Int64",
+    "nav_eagle": "Eagle Security",
+    "nav_impressum": "Impressum",
+    "nav_datenschutz": "Datenschutz",
+    "download_eagle": "Eagle Security herunterladen",
+    "lang_switch": "EN",
+    "lang_switch_other": "DE"
+  },
+  "en": {
+    "nav_home": "Int64",
+    "nav_eagle": "Eagle Security",
+    "nav_impressum": "Impressum",
+    "nav_datenschutz": "Privacy",
+    "download_eagle": "Download Eagle Security",
+    "lang_switch": "DE",
+    "lang_switch_other": "EN"
+  }
+}

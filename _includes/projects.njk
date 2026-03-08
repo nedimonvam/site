@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+{% block content %}
+<article class="page">
+  <h1 class="page__title">{{ title }}</h1>
+  <div class="page__body">
+    {{ content | safe }}
+  </div>
+  <div class="projects">
+    {% for project in projects %}
+    {% set desc = project["description_" ~ locale] or project.description %}
+    {% set label = project["linkLabel_" ~ locale] or project.linkLabel or "Link" %}
+    <section class="project-tile">
+      <div class="project-tile__media">
+        <img src="{{ pathPrefix }}{{ project.logo }}" alt="{{ project.title }}" class="project-tile__logo" width="128" height="128" loading="lazy">
+      </div>
+      <div class="project-tile__text">
+        <h2 class="project-tile__title">{{ project.title }}</h2>
+        <p class="project-tile__desc">{{ desc }}</p>
+        <a href="{{ project.link }}" class="project-tile__link" target="_blank" rel="noopener noreferrer">{{ label }}</a>
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</article>
+{% endblock %}

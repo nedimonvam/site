@@ -1,0 +1,249 @@
+/* Int64.pro — minimal, mono, terminal-style */
+
+:root {
+  --bg: #0a0a0a;
+  --fg: #00e676;
+  --fg-dim: #006b3c;
+  --accent: #76ff03;
+  --muted: #4a7c59;
+  --border: #1a3d2a;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+}
+
+.main:has(.home) {
+  padding-bottom: 1.5rem;
+}
+
+.footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.footer .sep {
+  margin: 0 0.5rem;
+  color: var(--fg-dim);
+}
+
+.lang-switch {
+  margin-left: 0.25rem;
+}
+
+.lang-switch a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.lang-switch a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Home — logo + console-style text (no frames) */
+.home {
+  text-align: center;
+  padding: 1rem 1rem 1.25rem;
+}
+
+.home__logo {
+  white-space: pre;
+  font-size: clamp(0.6rem, 3.5vw, 1.15rem);
+  line-height: 1.25;
+  color: var(--fg);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.02em;
+  overflow-x: auto;
+}
+
+.home__console {
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.home__console-line {
+  margin: 0.2rem 0;
+  color: var(--fg);
+}
+
+.home__console-prompt {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.home__console-cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+.home__console-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.home__console-link:hover {
+  text-decoration: underline;
+  color: var(--fg);
+}
+
+/* Page (Impressum, Datenschutz) */
+.page__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  color: var(--fg);
+}
+
+.page__body {
+  color: var(--fg);
+}
+
+.page__body p {
+  margin: 0 0 1rem;
+}
+
+.page__body h2,
+.page__body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--accent);
+}
+
+/* Eagle Security — pseudo console UI */
+.eagle {
+  text-align: center;
+  padding: 0 0 2rem;
+}
+
+.eagle__logo-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.eagle__logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.console {
+  max-width: 36rem;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 1px var(--fg-dim), 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.console__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(180deg, var(--fg-dim) 0%, #0d2e1a 100%);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--fg);
+}
+
+.console__titlebar-dots {
+  color: var(--muted);
+  letter-spacing: 0.2em;
+}
+
+.console__titlebar-title {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+}
+
+.console__body {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.console__line {
+  margin: 0.25rem 0;
+  color: var(--fg);
+}
+
+.console__line--muted {
+  color: var(--muted);
+  padding-left: 1.5rem;
+}
+
+.console__prompt {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.console__cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.console__btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.console__btn:hover {
+  background: rgba(118, 255, 3, 0.1);
+  color: var(--fg);
+}

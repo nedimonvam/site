@@ -1,0 +1,18 @@
+{% extends "layout.njk" %}
+{% block content %}
+<div class="home">
+  <pre class="home__logo" aria-hidden="true"> ██╗███╗   ██╗████████╗ ██████╗ ██╗  ██╗
+ ██║████╗  ██║╚══██╔══╝██╔════╝ ██║  ██║
+ ██║██╔██╗ ██║   ██║   ███████╗ ███████║
+ ██║██║╚██╗██║   ██║   ██╔═══██╗╚════██║
+ ██║██║ ╚████║   ██║   ╚██████╔╝     ██║
+ ╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝      ╚═╝</pre>
+  <div class="home__console">
+    <div class="home__console-line"><span class="home__console-prompt">$</span> download --app eagle-security</div>
+    <div class="home__console-line">
+      <span class="home__console-prompt">></span> <a href="{{ projects[0].link }}" class="home__console-link" target="_blank" rel="noopener noreferrer">{{ strings[locale].download_eagle }}</a>
+    </div>
+    <div class="home__console-line"><span class="home__console-prompt">$</span> <span class="home__console-cursor">_</span></div>
+  </div>
+</div>
+{% endblock %}

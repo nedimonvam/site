@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+{% block content %}
+{% set app = projects[0] %}
+{% set desc = app["description_" ~ locale] or app.description_en %}
+{% set linkLabel = app["linkLabel_" ~ locale] or app.linkLabel_en %}
+<div class="eagle">
+  <div class="eagle__logo-wrap">
+    <img src="{{ pathPrefix }}{{ app.logo }}" alt="{{ app.title }}" class="eagle__logo" width="160" height="160" loading="lazy">
+  </div>
+  <div class="console">
+    <div class="console__titlebar">
+      <span class="console__titlebar-dots">● ● ●</span>
+      <span class="console__titlebar-title">{{ app.title }} — v1.0</span>
+    </div>
+    <div class="console__body">
+      <div class="console__line"><span class="console__prompt">$</span> cat README.txt</div>
+      <div class="console__line console__line--muted">{{ desc }}</div>
+      <div class="console__line"></div>
+      <div class="console__line"><span class="console__prompt">$</span> download --platform android</div>
+      <div class="console__line">
+        <a href="{{ app.link }}" class="console__btn" target="_blank" rel="noopener noreferrer">[ {{ linkLabel }} ]</a>
+      </div>
+      <div class="console__line"></div>
+      <div class="console__line"><span class="console__prompt">$</span> <span class="console__cursor">_</span></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

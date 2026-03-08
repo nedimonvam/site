@@ -1,0 +1,49 @@
+{% if locale == 'en' %}
+{% set baseUrl = pathPrefix + '/en' %}
+{% else %}
+{% set baseUrl = pathPrefix %}
+{% endif %}
+{% set t = strings[locale] %}
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "Int64" }} · Int64.pro</title>
+  <link rel="stylesheet" href="{{ pathPrefix }}/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer">
+    <a href="{{ baseUrl }}/">{{ t.nav_home }}</a>
+    <span class="sep">·</span>
+    {% if locale == 'en' %}
+    <a href="{{ baseUrl }}/eagle-security/">{{ t.nav_eagle }}</a>
+    <span class="sep">·</span>
+    <a href="{{ baseUrl }}/impressum/">{{ t.nav_impressum }}</a>
+    <span class="sep">·</span>
+    <a href="{{ baseUrl }}/privacy/">{{ t.nav_datenschutz }}</a>
+{% else %}
+    <a href="{{ baseUrl }}/eagle-security/">{{ t.nav_eagle }}</a>
+    <span class="sep">·</span>
+    <a href="{{ baseUrl }}/impressum/">{{ t.nav_impressum }}</a>
+    <span class="sep">·</span>
+    <a href="{{ baseUrl }}/datenschutz/">{{ t.nav_datenschutz }}</a>
+{% endif %}
+    <span class="sep">·</span>
+    <span class="lang-switch">
+      {% if locale == 'de' %}
+      <a href="{{ pathPrefix }}/en/" aria-label="English">EN</a>
+      {% else %}
+      <a href="{{ pathPrefix }}/" aria-label="Deutsch">DE</a>
+      {% endif %}
+    </span>
+
+  </footer>
+</body>
+</html>
